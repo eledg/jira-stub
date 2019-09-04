@@ -1,3 +1,9 @@
+FROM gradle:5.6.1-jdk8 AS builder
+COPY . .
+RUN gradle check
+RUN gradle build
+
+
 FROM openjdk:8-jre-alpine
 
 ENV APPLICATION_USER ktor
@@ -8,7 +14,7 @@ RUN chown -R $APPLICATION_USER /app
 
 USER $APPLICATION_USER
 
-COPY ./build/libs/jira-stub.jar /app/jira-stub.jar
+COPY --from=builder /home/gradle/build/libs/jira-stub.jar /app/jira-stub.jar
 WORKDIR /app
 
 CMD ["java", "-server", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-XX:InitialRAMFraction=2", "-XX:MinRAMFraction=2", "-XX:MaxRAMFraction=2", "-XX:+UseG1GC", "-XX:MaxGCPauseMillis=100", "-XX:+UseStringDeduplication", "-jar", "jira-stub.jar"]
