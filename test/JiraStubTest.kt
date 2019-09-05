@@ -36,4 +36,21 @@ class JiraStubTest {
             }
         }
     }
+    @Test
+    fun testGetSearchResultWith() {
+        withTestApplication({ module(testing = true) }) {
+            handleRequest(HttpMethod.Get, "/rest/api/2/search?jql=test") {
+                addHeader(
+                    HttpHeaders.Authorization,
+                    HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
+                )
+            }.apply {
+                assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
+                    response.content
+                )
+            }
+        }
+    }
 }

@@ -37,6 +37,14 @@ fun Application.module(testing: Boolean = false) {
                         call.respond(HttpStatusCode.BadRequest)
                     }
                 }
+                get("search") {
+                    val jql = call.parameters["jql"]
+                    jql?.let {
+                        call.respond(JiraServices().getSearchResultWith(jql))
+                    } ?: run {
+                        call.respond(HttpStatusCode.BadRequest)
+                    }
+                }
             }
         }
     }

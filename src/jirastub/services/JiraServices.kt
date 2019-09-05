@@ -1,8 +1,12 @@
 package com.elliotledger.jirastub.services
 
-import com.elliotledger.jirastub.dataclasses.User
+import com.elliotledger.jirastub.dataclasses.*
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 class JiraServices {
+    private val logger: Logger = LoggerFactory.getLogger(JiraServices::class.simpleName)
+
     fun getUser(username: String): User {
         return User(
             key = username,
@@ -16,6 +20,60 @@ class JiraServices {
             ),
             displayName = "Tony Foxbridge",
             active = true
+        )
+    }
+    fun getSearchResultWith(jql: String): SearchResult {
+        return SearchResult(
+            startAt = 0,
+            maxResults = 50,
+            total = 3,
+            issues = listOf(
+                Ticket(
+                    key = "ABC-1111",
+                    fields = TicketField(
+                        summary = "A summary",
+                        status = Status(
+                            name = "Status Name"
+                        ),
+                        issuetype = IssueType(
+                            name = "Type name"
+                        ),
+                        customfield_10006 = "ABC-1234",
+                        assignee = Assignee(displayName = "Tony Foxbridge"),
+                        duedate = "2020-01-01"
+                    )
+                ),
+                Ticket(
+                    key = "ABC-1111",
+                    fields = TicketField(
+                        summary = "A summary",
+                        status = Status(
+                            name = "Status Name"
+                        ),
+                        issuetype = IssueType(
+                            name = "Type name"
+                        ),
+                        customfield_10006 = "ABC-1234",
+                        assignee = Assignee(displayName = "Tony Foxbridge"),
+                        duedate = "2020-01-01"
+                    )
+                ),
+                Ticket(
+                    key = "ABC-1111",
+                    fields = TicketField(
+                        summary = "A summary",
+                        status = Status(
+                            name = "Status Name"
+                        ),
+                        issuetype = IssueType(
+                            name = "Type name"
+                        ),
+                        customfield_10006 = "ABC-1234",
+                        assignee = Assignee(displayName = "Tony Foxbridge"),
+                        duedate = "2020-01-01"
+                    )
+                )
+            )
         )
     }
 }
