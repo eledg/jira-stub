@@ -37,6 +37,9 @@ fun Application.module(testing: Boolean = false) {
                         call.respond(HttpStatusCode.BadRequest)
                     }
                 }
+                get("search?{params}") {
+                    val params = call.parameters["params"]
+                }
             }
         }
     }
