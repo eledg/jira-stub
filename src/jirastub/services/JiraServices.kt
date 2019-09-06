@@ -1,8 +1,12 @@
 package com.elliotledger.jirastub.services
 
 import com.elliotledger.jirastub.dataclasses.User
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 class JiraServices {
+    private val logger: Logger = LoggerFactory.getLogger(JiraServices::class.simpleName)
+
     fun getUser(username: String): User {
         return User(
             key = username,
@@ -17,5 +21,9 @@ class JiraServices {
             displayName = "Tony Foxbridge",
             active = true
         )
+    }
+    fun getSearchResultWith(jql: String) {
+        // Input when statement for different search strings
+        logger.debug(jql)
     }
 }
