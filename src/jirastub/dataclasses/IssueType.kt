@@ -1,7 +1,7 @@
 package com.elliotledger.jirastub.dataclasses
 
 data class IssueType(
-    val self: String,
+    val self: String?,
     val id: String,
     val description: String,
     val iconUrl: String,
