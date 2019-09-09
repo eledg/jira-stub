@@ -36,4 +36,17 @@ class JiraStubTest {
             }
         }
     }
+    @Test
+    fun testGetSearchResultWith() {
+        withTestApplication({ module(testing = true)}) {
+            handleRequest(HttpMethod.Get, "/rest/api/2/search?jql=test") {
+                addHeader(
+                    HttpHeaders.Authorization,
+                    HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
+                )
+            }.apply {
+                assertEquals(HttpStatusCode.OK, response.status())
+            }
+        }
+    }
 }
