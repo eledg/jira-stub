@@ -54,12 +54,12 @@ class JiraServices {
                     )
                 ),
                 Ticket(
-                    id = "01112",
-                    key = "ABC-1112",
+                    id = "01111",
+                    key = "ABC-1111",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            description = "B description",
+                            description = "A description",
                             iconUrl = "url",
                             name = "Status Name",
                             id = "54321"
@@ -74,16 +74,16 @@ class JiraServices {
                         ),
                         epicLinksKey = "ABC-1234",
                         assignee = "Tony",
-                        dueDate = "02/01/2020"
+                        dueDate = "01/01/2020"
                     )
                 ),
                 Ticket(
-                    id = "01113",
-                    key = "ABC-1113",
+                    id = "01111",
+                    key = "ABC-1111",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            description = "C description",
+                            description = "A description",
                             iconUrl = "url",
                             name = "Status Name",
                             id = "54321"
@@ -98,7 +98,7 @@ class JiraServices {
                         ),
                         epicLinksKey = "ABC-1234",
                         assignee = "Tony",
-                        dueDate = "03/01/2020"
+                        dueDate = "01/01/2020"
                     )
                 )
             )
