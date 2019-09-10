@@ -1,10 +1,8 @@
 package com.elliotledger.jirastub.dataclasses
 
-data class IssueType(
-    val id: String,
+data class Status(
     val description: String,
     val iconUrl: String,
     val name: String,
-    val subtask: Boolean,
-    val avatarId: Int
+    val id: String
 )
