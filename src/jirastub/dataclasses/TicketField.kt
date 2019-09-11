@@ -3,8 +3,8 @@ package com.elliotledger.jirastub.dataclasses
 data class TicketField(
     val summary: String,
     val status: Status,
-    val issueType: IssueType,
-    val epicLinksKey: String,
-    val assignee: String,
-    val dueDate: String
+    val issuetype: IssueType,
+    val customfield_10006: String,
+    val assignee: Assignee,
+    val duedate: String
 )

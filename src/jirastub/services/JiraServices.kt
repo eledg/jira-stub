@@ -23,7 +23,7 @@ class JiraServices {
         )
     }
     fun getSearchResultWith(jql: String): SearchResult {
-        //logger.debug(jql)
+        logger.debug(jql)
         return SearchResult(
             startAt = 0,
             maxResults = 50,
@@ -31,26 +31,20 @@ class JiraServices {
             issues = listOf(
                 Ticket(
                     id = "01111",
-                     key = "ABC-1111",
+                    key = "ABC-1111",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            description = "A description",
-                            iconUrl = "url",
                             name = "Status Name",
                             id = "54321"
                         ),
-                        issueType = IssueType(
+                        issuetype = IssueType(
                             id = "23456",
-                            description = "Type description",
-                            iconUrl = "url",
-                            name = "Type name",
-                            subtask = false,
-                            avatarId = 12345
+                            name = "Type name"
                         ),
-                        epicLinksKey = "ABC-1234",
-                        assignee = "Tony",
-                        dueDate = "01/01/2020"
+                        customfield_10006 = "ABC-1234",
+                        assignee = Assignee(displayName = "Tony F. User"),
+                        duedate = "2020-01-01"
                     )
                 ),
                 Ticket(
@@ -59,22 +53,16 @@ class JiraServices {
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            description = "A description",
-                            iconUrl = "url",
                             name = "Status Name",
                             id = "54321"
                         ),
-                        issueType = IssueType(
+                        issuetype = IssueType(
                             id = "23456",
-                            description = "Type description",
-                            iconUrl = "url",
-                            name = "Type name",
-                            subtask = false,
-                            avatarId = 12345
+                            name = "Type name"
                         ),
-                        epicLinksKey = "ABC-1234",
-                        assignee = "Tony",
-                        dueDate = "01/01/2020"
+                        customfield_10006 = "ABC-1234",
+                        assignee = Assignee(displayName = "Tony F. User"),
+                        duedate = "2020-01-01"
                     )
                 ),
                 Ticket(
@@ -83,22 +71,16 @@ class JiraServices {
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            description = "A description",
-                            iconUrl = "url",
                             name = "Status Name",
                             id = "54321"
                         ),
-                        issueType = IssueType(
+                        issuetype = IssueType(
                             id = "23456",
-                            description = "Type description",
-                            iconUrl = "url",
-                            name = "Type name",
-                            subtask = false,
-                            avatarId = 12345
+                            name = "Type name"
                         ),
-                        epicLinksKey = "ABC-1234",
-                        assignee = "Tony",
-                        dueDate = "01/01/2020"
+                        customfield_10006 = "ABC-1234",
+                        assignee = Assignee(displayName = "Tony F. User"),
+                        duedate = "2020-01-01"
                     )
                 )
             )
