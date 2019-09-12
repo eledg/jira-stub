@@ -23,63 +23,53 @@ class JiraServices {
         )
     }
     fun getSearchResultWith(jql: String): SearchResult {
-        logger.debug(jql)
         return SearchResult(
             startAt = 0,
             maxResults = 50,
             total = 3,
             issues = listOf(
                 Ticket(
-                    id = "01111",
                     key = "ABC-1111",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            name = "Status Name",
-                            id = "54321"
+                            name = "Status Name"
                         ),
                         issuetype = IssueType(
-                            id = "23456",
                             name = "Type name"
                         ),
                         customfield_10006 = "ABC-1234",
-                        assignee = Assignee(displayName = "Tony F. User"),
+                        assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
                 ),
                 Ticket(
-                    id = "01111",
                     key = "ABC-1111",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            name = "Status Name",
-                            id = "54321"
+                            name = "Status Name"
                         ),
                         issuetype = IssueType(
-                            id = "23456",
                             name = "Type name"
                         ),
                         customfield_10006 = "ABC-1234",
-                        assignee = Assignee(displayName = "Tony F. User"),
+                        assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
                 ),
                 Ticket(
-                    id = "01111",
                     key = "ABC-1111",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            name = "Status Name",
-                            id = "54321"
+                            name = "Status Name"
                         ),
                         issuetype = IssueType(
-                            id = "23456",
                             name = "Type name"
                         ),
                         customfield_10006 = "ABC-1234",
-                        assignee = Assignee(displayName = "Tony F. User"),
+                        assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
                 )

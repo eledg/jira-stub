@@ -38,7 +38,7 @@ class JiraStubTest {
     }
     @Test
     fun testGetSearchResultWith() {
-        withTestApplication({ module(testing = true)}) {
+        withTestApplication({ module(testing = true) }) {
             handleRequest(HttpMethod.Get, "/rest/api/2/search?jql=test") {
                 addHeader(
                     HttpHeaders.Authorization,
@@ -47,7 +47,7 @@ class JiraStubTest {
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"id":"01111","key":"ABC-1111","fields":{"summary":"A summary","status":{"id":"54321","name":"Status Name"},"issuetype":{"id":"23456","name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony F. User"},"duedate":"2020-01-01"}},{"id":"01111","key":"ABC-1111","fields":{"summary":"A summary","status":{"id":"54321","name":"Status Name"},"issuetype":{"id":"23456","name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony F. User"},"duedate":"2020-01-01"}},{"id":"01111","key":"ABC-1111","fields":{"summary":"A summary","status":{"id":"54321","name":"Status Name"},"issuetype":{"id":"23456","name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony F. User"},"duedate":"2020-01-01"}}]}""",
+                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
                     response.content
                 )
             }
