@@ -41,8 +41,7 @@ fun Application.module(testing: Boolean = false) {
                     val jql = call.parameters["jql"]
                     jql?.let {
                         call.respond(JiraServices().getSearchResultWith(jql))
-                    }
-                        ?: run {
+                    } ?: run {
                         call.respond(HttpStatusCode.BadRequest)
                     }
                 }
