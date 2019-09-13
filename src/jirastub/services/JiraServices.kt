@@ -44,7 +44,7 @@ class JiraServices {
                     )
                 ),
                 Ticket(
-                    key = "ABC-1111",
+                    key = "ABC-2222",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
@@ -59,7 +59,7 @@ class JiraServices {
                     )
                 ),
                 Ticket(
-                    key = "ABC-1111",
+                    key = "ABC-3333",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
