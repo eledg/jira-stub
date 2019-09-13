@@ -51,7 +51,6 @@ class JiraStubTest {
                     response.content
                 )
             }
-            // Testing maxResults and startAt being passed in as parameters
             handleRequest(HttpMethod.Get, "rest/api/2/search?jql=test&startAt=10&maxResults=40") {
                 addHeader(
                     HttpHeaders.Authorization,
