@@ -41,14 +41,14 @@ fun Application.module(testing: Boolean = false) {
                     val jql = call.parameters["jql"]
                     var maxResults = call.parameters["maxResults"]
                     var startAt = call.parameters["startAt"]
-                    if (maxResults==null) {
-                        maxResults="50"
+                    if (maxResults == null) {
+                        maxResults = "50"
                     }
-                    if (startAt==null){
-                        startAt="0"
+                    if (startAt == null) {
+                        startAt = "0"
                     }
                     jql?.let {
-                        call.respond(JiraServices().getSearchResultWith(jql,maxResults,startAt))
+                        call.respond(JiraServices().getSearchResultWith(jql, maxResults, startAt))
                     } ?: run {
                         call.respond(HttpStatusCode.BadRequest)
                     }
