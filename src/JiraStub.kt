@@ -45,6 +45,14 @@ fun Application.module(testing: Boolean = false) {
                         call.respond(HttpStatusCode.BadRequest)
                     }
                 }
+                get("issue/{ticketKey?}") {
+                    val ticketKey = call.parameters["ticketKey"]
+                    ticketKey?.let {
+                        call.respond(JiraServices().getIssue())
+                    } ?: run {
+                        call.respond(HttpStatusCode.BadRequest)
+                    }
+                }
             }
         }
     }

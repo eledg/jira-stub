@@ -76,4 +76,7 @@ class JiraServices {
             )
         )
     }
+    fun getIssue() {
+        logger.debug("check")
+    }
 }
