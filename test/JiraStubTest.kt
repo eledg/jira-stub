@@ -63,6 +63,10 @@ class JiraStubTest {
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """{"fields":{"issuelinks":[{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"TEST-1"},"inwardIssue":{"key":"TEST-1"}},{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"TEST-2"},"inwardIssue":{"key":"TEST-2"}},{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"TEST-3"},"inwardIssue":{"key":"TEST-3"}}]}}""",
+                    response.content
+                )
             }
         }
     }
