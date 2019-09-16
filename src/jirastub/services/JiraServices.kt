@@ -53,7 +53,7 @@ class JiraServices {
                         issuetype = IssueType(
                             name = "Type name"
                         ),
-                        customfield_10006 = "ABC-1234",
+                        customfield_10006 = "ABC-2345",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
@@ -68,7 +68,7 @@ class JiraServices {
                         issuetype = IssueType(
                             name = "Type name"
                         ),
-                        customfield_10006 = "ABC-1234",
+                        customfield_10006 = "ABC-3456",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
@@ -76,7 +76,49 @@ class JiraServices {
             )
         )
     }
-    fun getIssue() {
+    fun getIssue(): Issue {
         logger.debug("check")
+        return Issue(
+            fields = IssueField(
+                issuelinks = listOf(
+                    IssueLink(
+                        type = IssueLinkType(
+                            name = "Gantt End to End",
+                            inward = "depends on"
+                        ),
+                        outwardIssue = OutInIssue(
+                            key = "TEST-1"
+                        ),
+                        inwardIssue = OutInIssue(
+                            key = "TEST-1"
+                        )
+                    ),
+                    IssueLink(
+                        type = IssueLinkType(
+                            name = "Gantt End to End",
+                            inward = "depends on"
+                        ),
+                        outwardIssue = OutInIssue(
+                            key = "TEST-2"
+                        ),
+                        inwardIssue = OutInIssue(
+                            key = "TEST-2"
+                        )
+                    ),
+                    IssueLink(
+                        type = IssueLinkType(
+                            name = "Gantt End to End",
+                            inward = "depends on"
+                        ),
+                        outwardIssue = OutInIssue(
+                            key = "TEST-3"
+                        ),
+                        inwardIssue = OutInIssue(
+                            key = "TEST-3"
+                        )
+                    )
+                )
+            )
+        )
     }
 }
