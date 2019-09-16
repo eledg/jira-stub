@@ -47,7 +47,7 @@ class JiraStubTest {
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-2222","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-3333","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
+                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-2222","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-3333","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
                     response.content
                 )
             }

@@ -1,5 +1,5 @@
 package com.elliotledger.jirastub.dataclasses
 
-data class OutInIssue(
+data class OutwardInwardIssue(
     val key: String
 )

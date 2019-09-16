@@ -83,37 +83,37 @@ class JiraServices {
                 issuelinks = listOf(
                     IssueLink(
                         type = IssueLinkType(
-                            name = "Gantt End to End",
+                            name = "Gant End to End",
                             inward = "depends on"
                         ),
-                        outwardIssue = OutInIssue(
+                        outwardIssue = OutwardInwardIssue(
                             key = "TEST-1"
                         ),
-                        inwardIssue = OutInIssue(
+                        inwardIssue = OutwardInwardIssue(
                             key = "TEST-1"
                         )
                     ),
                     IssueLink(
                         type = IssueLinkType(
-                            name = "Gantt End to End",
+                            name = "Gant End to End",
                             inward = "depends on"
                         ),
-                        outwardIssue = OutInIssue(
+                        outwardIssue = OutwardInwardIssue(
                             key = "TEST-2"
                         ),
-                        inwardIssue = OutInIssue(
+                        inwardIssue = OutwardInwardIssue(
                             key = "TEST-2"
                         )
                     ),
                     IssueLink(
                         type = IssueLinkType(
-                            name = "Gantt End to End",
+                            name = "Gant End to End",
                             inward = "depends on"
                         ),
-                        outwardIssue = OutInIssue(
+                        outwardIssue = OutwardInwardIssue(
                             key = "TEST-3"
                         ),
-                        inwardIssue = OutInIssue(
+                        inwardIssue = OutwardInwardIssue(
                             key = "TEST-3"
                         )
                     )
