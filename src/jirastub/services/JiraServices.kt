@@ -33,10 +33,10 @@ class JiraServices {
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            name = "Status Name"
+                            name = "Amazing"
                         ),
                         issuetype = IssueType(
-                            name = "Type name"
+                            name = "Chore"
                         ),
                         customfield_10006 = "ABC-1234",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
@@ -44,31 +44,31 @@ class JiraServices {
                     )
                 ),
                 Ticket(
-                    key = "ABC-1111",
+                    key = "ABC-1112",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            name = "Status Name"
+                            name = "Amazing"
                         ),
                         issuetype = IssueType(
-                            name = "Type name"
+                            name = "Chore"
                         ),
-                        customfield_10006 = "ABC-1234",
+                        customfield_10006 = "ABC-2345",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
                 ),
                 Ticket(
-                    key = "ABC-1111",
+                    key = "ABC-1113",
                     fields = TicketField(
                         summary = "A summary",
                         status = Status(
-                            name = "Status Name"
+                            name = "Amazing"
                         ),
                         issuetype = IssueType(
-                            name = "Type name"
+                            name = "Chore"
                         ),
-                        customfield_10006 = "ABC-1234",
+                        customfield_10006 = "ABC-3456",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
                         duedate = "2020-01-01"
                     )
