@@ -76,9 +76,10 @@ class JiraServices {
             )
         )
     }
-    fun getIssue(): Issue {
+    fun getIssue(key: String): Issue {
         logger.debug("check")
         return Issue(
+            key = key,
             fields = IssueField(
                 issuelinks = listOf(
                     IssueLink(
