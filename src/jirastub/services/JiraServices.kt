@@ -84,7 +84,7 @@ class JiraServices {
                 issuelinks = listOf(
                     IssueLink(
                         type = IssueLinkType(
-                            name = "Gant End to End",
+                            name = "name",
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
@@ -104,18 +104,6 @@ class JiraServices {
                         ),
                         inwardIssue = OutwardInwardIssue(
                             key = "TEST-2"
-                        )
-                    ),
-                    IssueLink(
-                        type = IssueLinkType(
-                            name = "Gant End to End",
-                            inward = "depends on"
-                        ),
-                        outwardIssue = OutwardInwardIssue(
-                            key = "TEST-3"
-                        ),
-                        inwardIssue = OutwardInwardIssue(
-                            key = "TEST-3"
                         )
                     )
                 )
