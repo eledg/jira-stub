@@ -87,10 +87,16 @@ class JiraServices {
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
-                            key = "TEST-1"
+                            key = "TEST-1",
+                            fields = OutwardInwardIssueField(
+                                issuetype = IssueType(name = "Epic")
+                            )
                         ),
-                        inwardIssue = OutwardInwardIssue(
-                            key = "TEST-1"
+                        inwardissue = OutwardInwardIssue(
+                            key = "TEST-1",
+                            fields = OutwardInwardIssueField(
+                                issuetype = IssueType(name = "Epic")
+                            )
                         )
                     ),
                     IssueLink(
@@ -99,10 +105,16 @@ class JiraServices {
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
-                            key = "TEST-2"
+                            key = "TEST-2",
+                            fields = OutwardInwardIssueField(
+                                issuetype = IssueType(name = "Epic")
+                            )
                         ),
-                        inwardIssue = OutwardInwardIssue(
-                            key = "TEST-2"
+                        inwardissue = OutwardInwardIssue(
+                            key = "TEST-2",
+                            fields = OutwardInwardIssueField(
+                                issuetype = IssueType(name = "Epic")
+                            )
                         )
                     )
                 )
