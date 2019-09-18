@@ -47,6 +47,15 @@ fun Application.module(testing: Boolean = false) {
                 }
                 get("issue/{ticketKey?}") {
                     val ticketKey = call.parameters["ticketKey"]
+                    var startAt = call.parameters["startAt"]
+                    var maxResults = call.parameters["maxResults"]
+                    var expand = call.parameters["expand"]
+                    if (startAt == null) {
+                        startAt = "0"
+                    }
+                    if (maxResults == null) {
+                        maxResults = "50"
+                    }
                     ticketKey?.let {
                         call.respond(JiraServices().getIssue(ticketKey))
                     } ?: run {
