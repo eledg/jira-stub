@@ -22,10 +22,10 @@ class JiraServices {
             active = true
         )
     }
-    fun getSearchResultWith(jql: String, maxResults: String, startAt: String): SearchResult {
+    fun getSearchResultWith(jql: String, maxResults: Int, startAt: Int): SearchResult {
         return SearchResult(
-            startAt = startAt.toInt(),
-            maxResults = maxResults.toInt(),
+            startAt = startAt,
+            maxResults = maxResults,
             total = 3,
             issues = listOf(
                 Ticket(
