@@ -47,24 +47,18 @@ class JiraStubTest {
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-2222","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-3333","fields":{"summary":"A summary","status":{"name":"Status Name"},"issuetype":{"name":"Type name"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
+                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
                     response.content
                 )
             }
-        }
-    }
-    @Test
-    fun testGetIssue() {
-        withTestApplication({ module(testing = true) }) {
-            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testkey") {
+            handleRequest(HttpMethod.Get, "rest/api/2/search?jql=test&startAt=10&maxResults=40") {
                 addHeader(
                     HttpHeaders.Authorization,
                     HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
                 )
             }.apply {
-                assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"key":"testkey","fields":{"issuelinks":[{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"TEST-1"},"inwardIssue":{"key":"TEST-1"}},{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"TEST-2"},"inwardIssue":{"key":"TEST-2"}}]}}""",
+                    """{"startAt":10,"maxResults":40,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
                     response.content
                 )
             }
