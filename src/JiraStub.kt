@@ -53,7 +53,7 @@ fun Application.module(testing: Boolean = false) {
                         call.respond(HttpStatusCode.BadRequest)
                     }
                 }
-                get("issue/{ticketKey?}") {
+                get("issue/{ticketKey}") {
                     val ticketKey = call.parameters["ticketKey"]
                     var startAt = 0
                     var maxResults = 50
