@@ -67,7 +67,7 @@ fun Application.module(testing: Boolean = false) {
                     }
                     ticketKey?.let {
                         expand?.let {
-                            call.respond(JiraServices().getIssueWithChangelog(expand, maxResults, startAt))
+                            call.respond(JiraServices().getIssueWithChangelog(ticketKey, expand, maxResults, startAt))
                         } ?: run {
                             call.respond(JiraServices().getIssue(ticketKey))
                         }
