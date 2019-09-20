@@ -121,4 +121,7 @@ class JiraServices {
             )
         )
     }
+    fun getIssueWithChangelog(expand: String, maxResults: Int, startAt: Int) {
+        logger.debug(expand)
+    }
 }

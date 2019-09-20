@@ -79,6 +79,13 @@ class JiraStubTest {
                     response.content
                 )
             }
+            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testkey?expand=test&maxResult=40&startAt=10") {
+                addHeader(HttpHeaders.Authorization,
+                    HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
+                )
+            }.apply {
+                assertEquals(HttpStatusCode.OK, response.status())
+            }
         }
     }
 }
