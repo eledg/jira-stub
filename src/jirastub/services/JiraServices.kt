@@ -87,13 +87,13 @@ class JiraServices {
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
-                            key = "DEF-1111",
+                            key = "ABC-2111",
                             fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
                         ),
                         inwardissue = OutwardInwardIssue(
-                            key = "DEF-1111",
+                            key = "ABC-2111",
                             fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
@@ -105,13 +105,13 @@ class JiraServices {
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
-                            key = "DEF-1112",
+                            key = "ABC-2112",
                             fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
                         ),
                         inwardissue = OutwardInwardIssue(
-                            key = "DEF-1112",
+                            key = "ABC-2112",
                             fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
