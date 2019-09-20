@@ -1,6 +1,6 @@
 package com.elliotledger.jirastub.dataclasses
 
-data class History(
+data class Histories(
     val created: String,
-    val items: List<Item>
+    val items: List<Items>
 )
