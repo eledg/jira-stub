@@ -76,4 +76,49 @@ class JiraServices {
             )
         )
     }
+    fun getIssue(key: String): Issue {
+        return Issue(
+            key = key,
+            fields = IssueFields(
+                issuelinks = listOf(
+                    IssueLink(
+                        type = IssueLinkType(
+                            name = "Gant End to End",
+                            inward = "depends on"
+                        ),
+                        outwardIssue = OutwardInwardIssue(
+                            key = "ABC-2111",
+                            fields = OutwardInwardIssueFields(
+                                issuetype = IssueType(name = "Epic")
+                            )
+                        ),
+                        inwardissue = OutwardInwardIssue(
+                            key = "ABC-2111",
+                            fields = OutwardInwardIssueFields(
+                                issuetype = IssueType(name = "Epic")
+                            )
+                        )
+                    ),
+                    IssueLink(
+                        type = IssueLinkType(
+                            name = "Gant End to End",
+                            inward = "depends on"
+                        ),
+                        outwardIssue = OutwardInwardIssue(
+                            key = "ABC-2112",
+                            fields = OutwardInwardIssueFields(
+                                issuetype = IssueType(name = "Epic")
+                            )
+                        ),
+                        inwardissue = OutwardInwardIssue(
+                            key = "ABC-2112",
+                            fields = OutwardInwardIssueFields(
+                                issuetype = IssueType(name = "Epic")
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    }
 }
