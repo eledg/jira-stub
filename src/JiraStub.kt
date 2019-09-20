@@ -8,6 +8,7 @@ import io.ktor.http.*
 import io.ktor.auth.*
 import io.ktor.gson.*
 import io.ktor.features.*
+import kotlin.math.max
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -65,7 +66,11 @@ fun Application.module(testing: Boolean = false) {
                         maxResults = it.toInt()
                     }
                     ticketKey?.let {
-                        call.respond(JiraServices().getIssue(ticketKey))
+                        expand?.let {
+                            call.respond(JiraServices().getIssueWithChangelog(expand, maxResults, startAt))
+                        } ?: run {
+                            call.respond(JiraServices().getIssue(ticketKey))
+                        }
                     } ?: run {
                         call.respond(HttpStatusCode.BadRequest)
                     }
