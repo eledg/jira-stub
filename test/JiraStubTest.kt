@@ -85,6 +85,10 @@ class JiraStubTest {
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
+                assertEquals(
+                    """{"key":"testkey","changelog":{"startAt":10,"maxResults":50,"total":2,"histories":[{"created":"2019-12-25T20:00:00.000+0000","items":[{"field":"status","fromString":"Open","toString":"Closed"}]}]}}""",
+                    response.content
+                )
             }
         }
     }

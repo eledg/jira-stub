@@ -8,7 +8,6 @@ import io.ktor.http.*
 import io.ktor.auth.*
 import io.ktor.gson.*
 import io.ktor.features.*
-import kotlin.math.max
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
