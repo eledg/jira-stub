@@ -79,7 +79,7 @@ class JiraServices {
     fun getIssue(key: String): Issue {
         return Issue(
             key = key,
-            fields = IssueField(
+            fields = IssueFields(
                 issuelinks = listOf(
                     IssueLink(
                         type = IssueLinkType(
@@ -87,14 +87,14 @@ class JiraServices {
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
-                            key = "TEST-1",
-                            fields = OutwardInwardIssueField(
+                            key = "DEF-1111",
+                            fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
                         ),
                         inwardissue = OutwardInwardIssue(
-                            key = "TEST-1",
-                            fields = OutwardInwardIssueField(
+                            key = "DEF-1111",
+                            fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
                         )
@@ -105,14 +105,14 @@ class JiraServices {
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
-                            key = "TEST-2",
-                            fields = OutwardInwardIssueField(
+                            key = "DEF-1112",
+                            fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
                         ),
                         inwardissue = OutwardInwardIssue(
-                            key = "TEST-2",
-                            fields = OutwardInwardIssueField(
+                            key = "DEF-1112",
+                            fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
                             )
                         )

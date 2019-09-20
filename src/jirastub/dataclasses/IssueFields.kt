@@ -1,5 +1,5 @@
 package com.elliotledger.jirastub.dataclasses
 
-data class IssueField(
+data class IssueFields(
     val issuelinks: List<IssueLink>
 )

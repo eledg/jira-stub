@@ -1,5 +1,5 @@
 package com.elliotledger.jirastub.dataclasses
 
-data class OutwardInwardIssueField(
+data class OutwardInwardIssueFields(
     val issuetype: IssueType
 )
