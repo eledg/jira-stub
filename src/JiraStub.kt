@@ -55,17 +55,17 @@ fun Application.module(testing: Boolean = false) {
                 }
                 get("issue/{ticketKey}") {
                     val ticketKey = call.parameters["ticketKey"]
-                    var startAt = 0
-                    var maxResults = 50
                     val expand = call.parameters["expand"]
-                    call.parameters["startAt"]?.let {
-                        startAt = it.toInt()
-                    }
-                    call.parameters["maxResults"]?.let {
-                        maxResults = it.toInt()
-                    }
                     ticketKey?.let {
                         expand?.let {
+                            var startAt = 0
+                            var maxResults = 50
+                            call.parameters["startAt"]?.let {
+                                startAt = it.toInt()
+                            }
+                            call.parameters["maxResults"]?.let {
+                                maxResults = it.toInt()
+                            }
                             call.respond(JiraServices().getIssueWithChangelog(ticketKey, expand, maxResults, startAt))
                         } ?: run {
                             call.respond(JiraServices().getIssue(ticketKey))
