@@ -55,8 +55,21 @@ fun Application.module(testing: Boolean = false) {
                 }
                 get("issue/{ticketKey}") {
                     val ticketKey = call.parameters["ticketKey"]
+                    val expand = call.parameters["expand"]
                     ticketKey?.let {
-                        call.respond(JiraServices().getIssue(ticketKey))
+                        expand?.let {
+                            var startAt = 0
+                            var maxResults = 50
+                            call.parameters["startAt"]?.let {
+                                startAt = it.toInt()
+                            }
+                            call.parameters["maxResults"]?.let {
+                                maxResults = it.toInt()
+                            }
+                            call.respond(JiraServices().getIssueWithChangelog(ticketKey, expand, maxResults, startAt))
+                        } ?: run {
+                            call.respond(JiraServices().getIssue(ticketKey))
+                        }
                     } ?: run {
                         call.respond(HttpStatusCode.BadRequest)
                     }

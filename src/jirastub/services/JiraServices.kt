@@ -118,6 +118,30 @@ class JiraServices {
                         )
                     )
                 )
+            ),
+            changelog = null
+        )
+    }
+    fun getIssueWithChangelog(key: String, expand: String, maxResults: Int, startAt: Int): Issue {
+        return Issue(
+            key = key,
+            fields = null,
+            changelog = Changelog(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                histories = listOf(
+                    Histories(
+                        created = "2019-12-25T20:00:00.000+0000",
+                        items = listOf(
+                            Items(
+                                field = "status",
+                                fromString = "Open",
+                                toString = "Closed"
+                            )
+                        )
+                    )
+                )
             )
         )
     }
