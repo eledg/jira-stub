@@ -79,14 +79,19 @@ class JiraStubTest {
                     response.content
                 )
             }
-            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testkey?expand=test&maxResult=40&startAt=10") {
+        }
+    }
+    @Test
+    fun testGetIssueWithChangelog() {
+        withTestApplication({ module(testing = true) }) {
+            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testkey?expand=test&maxResults=40&startAt=10") {
                 addHeader(HttpHeaders.Authorization,
                     HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"key":"testkey","changelog":{"startAt":10,"maxResults":50,"total":2,"histories":[{"created":"2019-12-25T20:00:00.000+0000","items":[{"field":"status","fromString":"Open","toString":"Closed"}]}]}}""",
+                    """{"key":"testkey","changelog":{"startAt":10,"maxResults":40,"total":2,"histories":[{"created":"2019-12-25T20:00:00.000+0000","items":[{"field":"status","fromString":"Open","toString":"Closed"}]}]}}""",
                     response.content
                 )
             }
