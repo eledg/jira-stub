@@ -92,7 +92,7 @@ class JiraServices {
                                 issuetype = IssueType(name = "Epic")
                             )
                         ),
-                        inwardIssue = OutwardInwardIssue(
+                        inwardissue = OutwardInwardIssue(
                             key = "ABC-2111",
                             fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
@@ -110,7 +110,7 @@ class JiraServices {
                                 issuetype = IssueType(name = "Epic")
                             )
                         ),
-                        inwardIssue = OutwardInwardIssue(
+                        inwardissue = OutwardInwardIssue(
                             key = "ABC-2112",
                             fields = OutwardInwardIssueFields(
                                 issuetype = IssueType(name = "Epic")
