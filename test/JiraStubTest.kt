@@ -75,7 +75,7 @@ class JiraStubTest {
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"key":"testkey","fields":{"issuelinks":[{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"ABC-2111","fields":{"issuetype":{"name":"Epic"}}},"inwardIssue":{"key":"ABC-2111","fields":{"issuetype":{"name":"Epic"}}}},{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"ABC-2112","fields":{"issuetype":{"name":"Epic"}}},"inwardIssue":{"key":"ABC-2112","fields":{"issuetype":{"name":"Epic"}}}}]}}""",
+                    """{"key":"testkey","fields":{"issuelinks":[{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"ABC-2111","fields":{"issuetype":{"name":"Epic"}}},"inwardissue":{"key":"ABC-2111","fields":{"issuetype":{"name":"Epic"}}}},{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"ABC-2112","fields":{"issuetype":{"name":"Epic"}}},"inwardissue":{"key":"ABC-2112","fields":{"issuetype":{"name":"Epic"}}}}]}}""",
                     response.content
                 )
             }

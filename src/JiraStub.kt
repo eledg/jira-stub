@@ -57,7 +57,7 @@ fun Application.module(testing: Boolean = false) {
                     val ticketKey = call.parameters["ticketKey"]
                     var startAt = 0
                     var maxResults = 50
-                    val expand = call.parameters["expand"]
+                    var expand = call.parameters["expand"]
                     call.parameters["startAt"]?.let {
                         startAt = it.toInt()
                     }
