@@ -146,7 +146,7 @@ class JiraServices {
                             issuetype = IssueType(
                                 name = "Chore"
                             ),
-                            customfield_10006 = "ABC-6789",
+                            customfield_10006 = "ABC-6100",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
@@ -161,7 +161,83 @@ class JiraServices {
                             issuetype = IssueType(
                                 name = "Chore"
                             ),
-                            customfield_10006 = "ABC-7896",
+                            customfield_10006 = "ABC-6101",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "key in (ABC-2113, ABC-2114) AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-2113",
+                        fields = TicketField(
+                            summary = "2113 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6102",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2114",
+                        fields = TicketField(
+                            summary = "2114 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6103",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "key in (ABC-2115, ABC-2116) AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-2115",
+                        fields = TicketField(
+                            summary = "2115 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6104",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2116",
+                        fields = TicketField(
+                            summary = "2116 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6105",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
