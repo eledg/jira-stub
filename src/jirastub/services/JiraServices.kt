@@ -77,59 +77,6 @@ class JiraServices {
             )
         )
         when (jql) {
-            "((Project = ABC AND Component = team1 AND issueType in (Story, Bug) AND status IN (Done, Amazing, Live)) OR (Project = ABC AND Component = team2 AND issueType in (Story, Bug) AND status IN (Done, Amazing, Live)) OR (Project = ABC AND Component = CITeam AND issueType in (Story, Bug) AND status IN (Done, Amazing, Live))) AND (resolutionDate >= startOfMonth()) AND status NOT IN (Closed, Withdrawn)"
-            -> result = SearchResult(
-                startAt = startAt,
-                maxResults = maxResults,
-                total = 3,
-                issues = listOf(
-                    Ticket(
-                        key = "ABC-1111",
-                        fields = TicketField(
-                            summary = "1111 Outcome",
-                            status = Status(
-                                name = "Amazing"
-                            ),
-                            issuetype = IssueType(
-                                name = "Chore"
-                            ),
-                            customfield_10006 = "ABC-1234",
-                            assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
-                        )
-                    ),
-                    Ticket(
-                        key = "ABC-1112",
-                        fields = TicketField(
-                            summary = "1112 Outcome",
-                            status = Status(
-                                name = "Amazing"
-                            ),
-                            issuetype = IssueType(
-                                name = "Chore"
-                            ),
-                            customfield_10006 = "ABC-2345",
-                            assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
-                        )
-                    ),
-                    Ticket(
-                        key = "ABC-1113",
-                        fields = TicketField(
-                            summary = "1113 Outcome",
-                            status = Status(
-                                name = "Amazing"
-                            ),
-                            issuetype = IssueType(
-                                name = "Chore"
-                            ),
-                            customfield_10006 = "ABC-3456",
-                            assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
-                        )
-                    )
-                )
-            )
             "key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)"
             -> result = SearchResult(
                 startAt = startAt,
