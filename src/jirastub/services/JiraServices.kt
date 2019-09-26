@@ -23,6 +23,7 @@ class JiraServices {
         )
     }
     fun getSearchResultWith(jql: String, maxResults: Int, startAt: Int): SearchResult {
+        logger.debug(jql)
         var result = SearchResult(
             startAt = startAt,
             maxResults = maxResults,
@@ -247,7 +248,7 @@ class JiraServices {
         return result
     }
     fun getIssue(key: String): Issue {
-        return Issue(
+        var result = Issue(
             key = key,
             fields = IssueFields(
                 issuelinks = listOf(
@@ -291,6 +292,99 @@ class JiraServices {
             ),
             changelog = null
         )
+        when (key) {
+            "ABC-1112"
+            -> result = Issue(
+                key = key,
+                fields = IssueFields(
+                    issuelinks = listOf(
+                            IssueLink(
+                                type = IssueLinkType(
+                                    name = "Gant End to End",
+                                    inward = "depends on"
+                                ),
+                                outwardIssue = OutwardInwardIssue(
+                                    key = "ABC-2113",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                ),
+                                inwardissue = OutwardInwardIssue(
+                                    key = "ABC-2113",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                )
+                            ),
+                            IssueLink(
+                                type = IssueLinkType(
+                                    name = "Gant End to End",
+                                    inward = "depends on"
+                                ),
+                                outwardIssue = OutwardInwardIssue(
+                                    key = "ABC-2114",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                ),
+                                inwardissue = OutwardInwardIssue(
+                                    key = "ABC-2114",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                )
+                            )
+                        )
+                ),
+                changelog = null
+            )
+            "ABC-1113"
+            -> result = Issue(
+                key = key,
+                fields = IssueFields(
+                    issuelinks = listOf(
+                        IssueLink(
+                            type = IssueLinkType(
+                                name = "Gant End to End",
+                                inward = "depends on"
+                            ),
+                            outwardIssue = OutwardInwardIssue(
+                                key = "ABC-2115",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            ),
+                            inwardissue = OutwardInwardIssue(
+                                key = "ABC-2115",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            )
+                        ),
+                        IssueLink(
+                            type = IssueLinkType(
+                                name = "Gant End to End",
+                                inward = "depends on"
+                            ),
+                            outwardIssue = OutwardInwardIssue(
+                                key = "ABC-2116",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            ),
+                            inwardissue = OutwardInwardIssue(
+                                key = "ABC-2116",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            )
+                        )
+                    )
+                ),
+                changelog = null
+            )
+        }
+        return result
     }
     fun getIssueWithChangelog(key: String, expand: String, maxResults: Int, startAt: Int): Issue {
         return Issue(
