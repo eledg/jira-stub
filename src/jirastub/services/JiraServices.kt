@@ -130,7 +130,44 @@ class JiraServices {
                     )
                 )
             )
-
+            "key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-2111",
+                        fields = TicketField(
+                            summary = "2111 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-1234",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2112",
+                        fields = TicketField(
+                            summary = "2112 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2345",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
         }
         return result
     }
