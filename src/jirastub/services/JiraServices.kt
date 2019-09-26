@@ -32,7 +32,7 @@ class JiraServices {
                 Ticket(
                     key = "ABC-1111",
                     fields = TicketField(
-                        summary = "1111 summary",
+                        summary = "1111 Outcome",
                         status = Status(
                             name = "Amazing"
                         ),
@@ -47,7 +47,7 @@ class JiraServices {
                 Ticket(
                     key = "ABC-1112",
                     fields = TicketField(
-                        summary = "1112 summary",
+                        summary = "1112 Outcome",
                         status = Status(
                             name = "Amazing"
                         ),
@@ -62,7 +62,7 @@ class JiraServices {
                 Ticket(
                     key = "ABC-1113",
                     fields = TicketField(
-                        summary = "1113 summary",
+                        summary = "1113 Outcome",
                         status = Status(
                             name = "Amazing"
                         ),
@@ -86,7 +86,7 @@ class JiraServices {
                     Ticket(
                         key = "ABC-1111",
                         fields = TicketField(
-                            summary = "1111 summary",
+                            summary = "1111 Outcome",
                             status = Status(
                                 name = "Amazing"
                             ),
@@ -101,7 +101,7 @@ class JiraServices {
                     Ticket(
                         key = "ABC-1112",
                         fields = TicketField(
-                            summary = "1112 summary",
+                            summary = "1112 Outcome",
                             status = Status(
                                 name = "Amazing"
                             ),
@@ -116,7 +116,7 @@ class JiraServices {
                     Ticket(
                         key = "ABC-1113",
                         fields = TicketField(
-                            summary = "1113 summary",
+                            summary = "1113 Outcome",
                             status = Status(
                                 name = "Amazing"
                             ),
@@ -134,19 +134,19 @@ class JiraServices {
             -> result = SearchResult(
                 startAt = startAt,
                 maxResults = maxResults,
-                total = 2,
+                total = 4,
                 issues = listOf(
                     Ticket(
                         key = "ABC-2111",
                         fields = TicketField(
-                            summary = "2111 summary",
+                            summary = "2111 Epic summary",
                             status = Status(
                                 name = "Amazing"
                             ),
                             issuetype = IssueType(
                                 name = "Chore"
                             ),
-                            customfield_10006 = "ABC-1234",
+                            customfield_10006 = "ABC-6789",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
@@ -154,14 +154,44 @@ class JiraServices {
                     Ticket(
                         key = "ABC-2112",
                         fields = TicketField(
-                            summary = "2112 summary",
+                            summary = "2112 Epic summary",
                             status = Status(
                                 name = "Amazing"
                             ),
                             issuetype = IssueType(
                                 name = "Chore"
                             ),
-                            customfield_10006 = "ABC-2345",
+                            customfield_10006 = "ABC-7896",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2113",
+                        fields = TicketField(
+                            summary = "2113 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-8967",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2114",
+                        fields = TicketField(
+                            summary = "2114 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-9678",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
