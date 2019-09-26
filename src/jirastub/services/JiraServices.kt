@@ -75,7 +75,7 @@ class JiraServices {
                 )
             )
         )
-        when(jql) {
+        when (jql) {
             "((Project = ABC AND Component = team1 AND issueType in (Story, Bug) AND status IN (Done, Amazing, Live)) OR (Project = ABC AND Component = team2 AND issueType in (Story, Bug) AND status IN (Done, Amazing, Live)) OR (Project = ABC AND Component = CITeam AND issueType in (Story, Bug) AND status IN (Done, Amazing, Live))) AND (resolutionDate >= startOfMonth()) AND status NOT IN (Closed, Withdrawn)"
             -> result = SearchResult(
                 startAt = startAt,

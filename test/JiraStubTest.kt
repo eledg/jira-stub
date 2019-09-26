@@ -47,7 +47,7 @@ class JiraStubTest {
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
+                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"1111 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"1112 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"1113 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
                     response.content
                 )
             }
@@ -58,7 +58,7 @@ class JiraStubTest {
                 )
             }.apply {
                 assertEquals(
-                    """{"startAt":10,"maxResults":40,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"A summary","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
+                    """{"startAt":10,"maxResults":40,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"1111 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"1112 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"1113 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
                     response.content
                 )
             }
@@ -91,7 +91,7 @@ class JiraStubTest {
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
                 assertEquals(
-                    """{"key":"testkey","changelog":{"startAt":10,"maxResults":40,"total":2,"histories":[{"created":"2019-12-25T20:00:00.000+0000","items":[{"field":"status","fromString":"Open","toString":"Closed"}]}]}}""",
+                    """{"key":"testkey","changelog":{"startAt":10,"maxResults":40,"total":1,"histories":[{"created":"2019-12-25T20:00:00.000+0000","items":[{"field":"status","fromString":"Open","toString":"Closed"}]}]}}""",
                     response.content
                 )
             }
