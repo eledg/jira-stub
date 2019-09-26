@@ -23,7 +23,6 @@ class JiraServices {
         )
     }
     fun getSearchResultWith(jql: String, maxResults: Int, startAt: Int): SearchResult {
-        logger.debug(jql)
         var result = SearchResult(
             startAt = startAt,
             maxResults = maxResults,
@@ -134,7 +133,7 @@ class JiraServices {
             -> result = SearchResult(
                 startAt = startAt,
                 maxResults = maxResults,
-                total = 4,
+                total = 2,
                 issues = listOf(
                     Ticket(
                         key = "ABC-2111",
@@ -165,33 +164,79 @@ class JiraServices {
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
-                    ),
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2111 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
                     Ticket(
-                        key = "ABC-2113",
+                        key = "ABC-3111",
                         fields = TicketField(
-                            summary = "2113 Epic summary",
+                            summary = "3111 summary",
                             status = Status(
                                 name = "Amazing"
                             ),
                             issuetype = IssueType(
                                 name = "Chore"
                             ),
-                            customfield_10006 = "ABC-8967",
+                            customfield_10006 = "ABC-2111",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
                     ),
                     Ticket(
-                        key = "ABC-2114",
+                        key = "ABC-3112",
                         fields = TicketField(
-                            summary = "2114 Epic summary",
+                            summary = "3112 summary",
                             status = Status(
                                 name = "Amazing"
                             ),
                             issuetype = IssueType(
                                 name = "Chore"
                             ),
-                            customfield_10006 = "ABC-9678",
+                            customfield_10006 = "ABC-2111",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2112 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-3113",
+                        fields = TicketField(
+                            summary = "3113 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2112",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-3114",
+                        fields = TicketField(
+                            summary = "3114 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2112",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
                             duedate = "2020-01-01"
                         )
@@ -254,7 +299,7 @@ class JiraServices {
             changelog = Changelog(
                 startAt = startAt,
                 maxResults = maxResults,
-                total = 2,
+                total = 1,
                 histories = listOf(
                     Histories(
                         created = "2019-12-25T20:00:00.000+0000",
