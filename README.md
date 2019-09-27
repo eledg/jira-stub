@@ -32,6 +32,10 @@ The below is required to be installed for the Jira stub to run locally:
 
 #### <a id="GET-/user"></a> GET /user
 
+Parameters:
+* `username` - is essential, if missing will throw 400 - Bad Request
+
+---
 
 Example: http://localhost:8081/rest/api/2/user?username=tony
 
@@ -61,9 +65,11 @@ Parameters:
 * `maxResults` - if missing will default to 50
 * `startAt` - if missing will default to 0
 
-JQL: `key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)`
+---
 
 Example: http://localhost:8081/rest/api/2/search?jql=key%20in%20(ABC-2111,%20ABC-2112)%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)
+
+JQL: `key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)`
 
 Response body:
 
@@ -109,10 +115,10 @@ Response body:
         ]
     }
 
-    
-JQL: `"Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)`
 
 Example: http://localhost:8081/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)
+
+JQL: `"Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)`
 
 Response body:
 
@@ -158,9 +164,10 @@ Response body:
         ]
     }
 ---
-JQL: "Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)
 
 Example: http://localhost:8081/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)&maxResults=40&startAt=10
+
+JQL: "Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)
 
 Response body:
 
@@ -214,6 +221,8 @@ Parameters:
 * `expand` - if expand is present it will respond with changelog
     * `maxResults` - only used if expand is present, default is 50
     * `startAt` - only used if expand is present, default is 0
+    
+---
 
 Example: http://localhost:8081/rest/api/2/issue/ABC-1111
  
