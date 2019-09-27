@@ -2,6 +2,11 @@
 
 An open source Jira stub for Jira Server.
 
+Currently has end points for GET requests to:
+ - /user
+ - /search 
+ - /issue/[key]
+
 ## 1. Running locally
 
 ## 1.1 Prerequisites
@@ -19,7 +24,14 @@ The below is required to be installed for the Jira stub to run locally:
 
 ## 1.3 Request and Response Examples
 
-#### GET /user
+#### Requests
+
+* [GET /user](#GET-/user)
+* [GET /search](#GET-/search)
+* [GET /issue/[key]](#GET-/issue/[key])
+
+####GET /user
+
 
 Example: http://localhost:8081/rest/api/2/user?username=tony
 
@@ -39,9 +51,15 @@ Response body:
         "displayName": "Tony Foxbridge",
         "active": true
     }
+
+---
     
-    
- #### GET /search
+ ####GET /search
+ 
+Parameters:
+* `jql` - is essential, if missing will throw 400 - Bad Request
+* `maxResults` - if missing will default to 50
+* `startAt` - if missing will default to 0
 
 JQL: `key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)`
 
@@ -188,6 +206,12 @@ Response body:
     
 #### GET /issue/[key]
  
+Parameters:
+* `key` - is essential, if missing will throw 400 - Bad Request
+* `expand` - if expand is present it will respond with changelog
+    * `maxResults` - only used if expand is present, default is 50
+    * `startAt` - only used if expand is present, default is 0
+
 Example: http://localhost:8081/rest/api/2/issue/ABC-1111
  
 Response body:
