@@ -28,7 +28,7 @@ The below is required to be installed for the Jira stub to run locally:
 
 * [GET /user](#GET-/user)
 * [GET /search](#GET-/search)
-* [GET /issue/[key]](#GET/issue/[key])
+* [GET /issue/[key]](#GET/issue)
 
 #### <a id="GET-/user"></a> GET /user
 
@@ -108,7 +108,7 @@ Response body:
             }
         ]
     }
----
+
     
 JQL: `"Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)`
 
@@ -158,6 +158,8 @@ Response body:
         ]
     }
 ---
+JQL: "Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)
+
 Example: http://localhost:8081/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)&maxResults=40&startAt=10
 
 Response body:
@@ -204,7 +206,7 @@ Response body:
         ]
     }
     
-#### <a id="GET-/issue/[key]"></a> GET /issue/[key]
+#### <a id="GET-/issue"></a> GET /issue/[key]
  
 Parameters:
 * `key` - is essential, if missing will throw 400 - Bad Request
