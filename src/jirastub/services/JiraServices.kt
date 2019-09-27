@@ -23,7 +23,6 @@ class JiraServices {
         )
     }
     fun getSearchResultWith(jql: String, maxResults: Int, startAt: Int): SearchResult {
-        logger.debug(jql)
         var result = SearchResult(
             startAt = startAt,
             maxResults = maxResults,
