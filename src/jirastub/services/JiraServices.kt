@@ -23,7 +23,7 @@ class JiraServices {
         )
     }
     fun getSearchResultWith(jql: String, maxResults: Int, startAt: Int): SearchResult {
-        return SearchResult(
+        var result = SearchResult(
             startAt = startAt,
             maxResults = maxResults,
             total = 3,
@@ -31,7 +31,7 @@ class JiraServices {
                 Ticket(
                     key = "ABC-1111",
                     fields = TicketField(
-                        summary = "A summary",
+                        summary = "1111 Outcome",
                         status = Status(
                             name = "Amazing"
                         ),
@@ -46,7 +46,7 @@ class JiraServices {
                 Ticket(
                     key = "ABC-1112",
                     fields = TicketField(
-                        summary = "A summary",
+                        summary = "1112 Outcome",
                         status = Status(
                             name = "Amazing"
                         ),
@@ -61,7 +61,7 @@ class JiraServices {
                 Ticket(
                     key = "ABC-1113",
                     fields = TicketField(
-                        summary = "A summary",
+                        summary = "1113 Outcome",
                         status = Status(
                             name = "Amazing"
                         ),
@@ -75,9 +75,354 @@ class JiraServices {
                 )
             )
         )
+        when (jql) {
+            "key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-2111",
+                        fields = TicketField(
+                            summary = "2111 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6100",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2112",
+                        fields = TicketField(
+                            summary = "2112 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6101",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "key in (ABC-2113, ABC-2114) AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-2113",
+                        fields = TicketField(
+                            summary = "2113 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6102",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2114",
+                        fields = TicketField(
+                            summary = "2114 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6103",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "key in (ABC-2115, ABC-2116) AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-2115",
+                        fields = TicketField(
+                            summary = "2115 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6104",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-2116",
+                        fields = TicketField(
+                            summary = "2116 Epic summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-6105",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2111 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-4001",
+                        fields = TicketField(
+                            summary = "4001 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2111",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-4002",
+                        fields = TicketField(
+                            summary = "4002 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2111",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2112 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-4003",
+                        fields = TicketField(
+                            summary = "4003 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2112",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-4004",
+                        fields = TicketField(
+                            summary = "4004 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2112",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2113 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-4005",
+                        fields = TicketField(
+                            summary = "4005 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2113",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-4006",
+                        fields = TicketField(
+                            summary = "4006 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2113",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2114 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-4006",
+                        fields = TicketField(
+                            summary = "4006 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2114",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-4007",
+                        fields = TicketField(
+                            summary = "4007 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2114",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2115 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-4008",
+                        fields = TicketField(
+                            summary = "4008 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2115",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-4009",
+                        fields = TicketField(
+                            summary = "4009 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2115",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+            "\"Epic Link\" = ABC-2116 AND status NOT IN (Closed, Withdrawn)"
+            -> result = SearchResult(
+                startAt = startAt,
+                maxResults = maxResults,
+                total = 2,
+                issues = listOf(
+                    Ticket(
+                        key = "ABC-4010",
+                        fields = TicketField(
+                            summary = "4010 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2116",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    ),
+                    Ticket(
+                        key = "ABC-4011",
+                        fields = TicketField(
+                            summary = "4011 summary",
+                            status = Status(
+                                name = "Amazing"
+                            ),
+                            issuetype = IssueType(
+                                name = "Chore"
+                            ),
+                            customfield_10006 = "ABC-2116",
+                            assignee = Assignee(displayName = "Tony Foxbridge"),
+                            duedate = "2020-01-01"
+                        )
+                    )
+                )
+            )
+        }
+        return result
     }
     fun getIssue(key: String): Issue {
-        return Issue(
+        var result = Issue(
             key = key,
             fields = IssueFields(
                 issuelinks = listOf(
@@ -121,6 +466,99 @@ class JiraServices {
             ),
             changelog = null
         )
+        when (key) {
+            "ABC-1112"
+            -> result = Issue(
+                key = key,
+                fields = IssueFields(
+                    issuelinks = listOf(
+                            IssueLink(
+                                type = IssueLinkType(
+                                    name = "Gant End to End",
+                                    inward = "depends on"
+                                ),
+                                outwardIssue = OutwardInwardIssue(
+                                    key = "ABC-2113",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                ),
+                                inwardissue = OutwardInwardIssue(
+                                    key = "ABC-2113",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                )
+                            ),
+                            IssueLink(
+                                type = IssueLinkType(
+                                    name = "Gant End to End",
+                                    inward = "depends on"
+                                ),
+                                outwardIssue = OutwardInwardIssue(
+                                    key = "ABC-2114",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                ),
+                                inwardissue = OutwardInwardIssue(
+                                    key = "ABC-2114",
+                                    fields = OutwardInwardIssueFields(
+                                        issuetype = IssueType(name = "Epic")
+                                    )
+                                )
+                            )
+                        )
+                ),
+                changelog = null
+            )
+            "ABC-1113"
+            -> result = Issue(
+                key = key,
+                fields = IssueFields(
+                    issuelinks = listOf(
+                        IssueLink(
+                            type = IssueLinkType(
+                                name = "Gant End to End",
+                                inward = "depends on"
+                            ),
+                            outwardIssue = OutwardInwardIssue(
+                                key = "ABC-2115",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            ),
+                            inwardissue = OutwardInwardIssue(
+                                key = "ABC-2115",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            )
+                        ),
+                        IssueLink(
+                            type = IssueLinkType(
+                                name = "Gant End to End",
+                                inward = "depends on"
+                            ),
+                            outwardIssue = OutwardInwardIssue(
+                                key = "ABC-2116",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            ),
+                            inwardissue = OutwardInwardIssue(
+                                key = "ABC-2116",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            )
+                        )
+                    )
+                ),
+                changelog = null
+            )
+        }
+        return result
     }
     fun getIssueWithChangelog(key: String, expand: String, maxResults: Int, startAt: Int): Issue {
         return Issue(
@@ -129,7 +567,7 @@ class JiraServices {
             changelog = Changelog(
                 startAt = startAt,
                 maxResults = maxResults,
-                total = 2,
+                total = 1,
                 histories = listOf(
                     Histories(
                         created = "2019-12-25T20:00:00.000+0000",
