@@ -28,7 +28,7 @@ The below is required to be installed for the Jira stub to run locally:
 
 * [GET /user](#GET-/user)
 * [GET /search](#GET-/search)
-* [GET /issue/[key]](#GET/issue)
+* [GET /issue/[key]](#GET-/issue)
 
 #### <a id="GET-/user"></a> GET /user
 
@@ -205,8 +205,9 @@ Response body:
             }
         ]
     }
-    
-#### <a id="GET-/issue"></a> GET /issue/[key]
+---
+
+ #### <a id="GET-/issue"></a> GET /issue/[key]
  
 Parameters:
 * `key` - is essential, if missing will throw 400 - Bad Request
