@@ -26,11 +26,11 @@ The below is required to be installed for the Jira stub to run locally:
 
 #### Requests
 
-* [GET /user](####GET-/user)
-* [GET /search](####GET-/search)
-* [GET /issue/[key]](####GET-/issue/[key])
+* [GET /user](#GET-/user)
+* [GET /search](#GET-/search)
+* [GET /issue/[key]](#GET/issue/[key])
 
-#### GET /user
+#### <a id="GET-/user"></a> GET /user
 
 
 Example: http://localhost:8081/rest/api/2/user?username=tony
@@ -54,7 +54,7 @@ Response body:
 
 ---
     
- #### GET /search
+ #### <a id="GET-/search"></a> GET /search
  
 Parameters:
 * `jql` - is essential, if missing will throw 400 - Bad Request
@@ -204,7 +204,7 @@ Response body:
         ]
     }
     
-#### GET /issue/[key]
+#### <a id="GET-/issue/[key]"></a> GET /issue/[key]
  
 Parameters:
 * `key` - is essential, if missing will throw 400 - Bad Request
