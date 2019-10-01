@@ -428,7 +428,7 @@ class JiraServices {
                 issuelinks = listOf(
                     IssueLink(
                         type = IssueLinkType(
-                            name = "Gant End to End",
+                            name = "Gantt End to End",
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
@@ -446,7 +446,7 @@ class JiraServices {
                     ),
                     IssueLink(
                         type = IssueLinkType(
-                            name = "Gant End to End",
+                            name = "Gantt End to End",
                             inward = "depends on"
                         ),
                         outwardIssue = OutwardInwardIssue(
@@ -474,7 +474,7 @@ class JiraServices {
                     issuelinks = listOf(
                             IssueLink(
                                 type = IssueLinkType(
-                                    name = "Gant End to End",
+                                    name = "Gantt End to End",
                                     inward = "depends on"
                                 ),
                                 outwardIssue = OutwardInwardIssue(
@@ -492,7 +492,7 @@ class JiraServices {
                             ),
                             IssueLink(
                                 type = IssueLinkType(
-                                    name = "Gant End to End",
+                                    name = "Gantt End to End",
                                     inward = "depends on"
                                 ),
                                 outwardIssue = OutwardInwardIssue(
@@ -519,7 +519,7 @@ class JiraServices {
                     issuelinks = listOf(
                         IssueLink(
                             type = IssueLinkType(
-                                name = "Gant End to End",
+                                name = "Gantt End to End",
                                 inward = "depends on"
                             ),
                             outwardIssue = OutwardInwardIssue(
@@ -537,7 +537,7 @@ class JiraServices {
                         ),
                         IssueLink(
                             type = IssueLinkType(
-                                name = "Gant End to End",
+                                name = "Gantt End to End",
                                 inward = "depends on"
                             ),
                             outwardIssue = OutwardInwardIssue(
@@ -570,12 +570,12 @@ class JiraServices {
                 total = 1,
                 histories = listOf(
                     Histories(
-                        created = "2019-12-25T20:00:00.000+0000",
+                        created = "2019-05-01T20:00:00.000+0000",
                         items = listOf(
                             Items(
                                 field = "status",
                                 fromString = "Open",
-                                toString = "Closed"
+                                toString = "Jira Stub Status"
                             )
                         )
                     )
