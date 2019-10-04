@@ -40,7 +40,7 @@ class JiraServices {
                         ),
                         customfield_10006 = "ABC-1234",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
-                        duedate = "2020-01-01"
+                        duedate = "2020-01-07"
                     )
                 ),
                 Ticket(
@@ -55,7 +55,7 @@ class JiraServices {
                         ),
                         customfield_10006 = "ABC-2345",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
-                        duedate = "2020-01-01"
+                        duedate = "2020-01-05"
                     )
                 ),
                 Ticket(
@@ -70,7 +70,7 @@ class JiraServices {
                         ),
                         customfield_10006 = "ABC-3456",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
-                        duedate = "2020-01-01"
+                        duedate = "2020-01-03"
                     )
                 )
             )
@@ -94,7 +94,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6100",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-07"
                         )
                     ),
                     Ticket(
@@ -109,7 +109,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6101",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-06"
                         )
                     )
                 )
@@ -132,7 +132,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6102",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-05"
                         )
                     ),
                     Ticket(
@@ -147,7 +147,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6103",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-04"
                         )
                     )
                 )
@@ -170,7 +170,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6104",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-03"
                         )
                     ),
                     Ticket(
@@ -185,7 +185,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6105",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-02"
                         )
                     )
                 )
@@ -208,7 +208,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2111",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-07"
                         )
                     ),
                     Ticket(
@@ -223,7 +223,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2111",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-06"
                         )
                     )
                 )
@@ -246,7 +246,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2112",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-06"
                         )
                     ),
                     Ticket(
@@ -261,7 +261,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2112",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-05"
                         )
                     )
                 )
@@ -284,7 +284,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2113",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-05"
                         )
                     ),
                     Ticket(
@@ -299,7 +299,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2113",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-04"
                         )
                     )
                 )
@@ -322,7 +322,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2114",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-04"
                         )
                     ),
                     Ticket(
@@ -337,7 +337,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2114",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-03"
                         )
                     )
                 )
@@ -360,7 +360,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2115",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-03"
                         )
                     ),
                     Ticket(
@@ -375,7 +375,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2115",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-02"
                         )
                     )
                 )
@@ -398,7 +398,7 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2116",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-02"
                         )
                     ),
                     Ticket(
