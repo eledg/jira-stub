@@ -574,8 +574,8 @@ class JiraServices {
                         items = listOf(
                             Items(
                                 field = "status",
-                                fromString = "Open",
-                                toString = "Jira Stub Status"
+                                fromString = "Next",
+                                toString = "In Progress"
                             )
                         )
                     )

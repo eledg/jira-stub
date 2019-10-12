@@ -1,5 +1,9 @@
 package com.elliotledger
 
+import com.elliotledger.jirastub.dataclasses.Issue
+import com.elliotledger.jirastub.dataclasses.SearchResult
+import com.elliotledger.jirastub.dataclasses.User
+import com.google.gson.Gson
 import io.ktor.http.*
 import io.ktor.http.auth.HttpAuthHeader
 import kotlin.test.*
@@ -9,6 +13,8 @@ import java.util.*
 class JiraStubTest {
     private val username = "username"
     private val password = "password"
+
+    private val gson = Gson()
 
     @Test
     fun testAuthenticationFailed() {
@@ -29,15 +35,23 @@ class JiraStubTest {
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
+
+                val user = gson.fromJson(response.content, User::class.java)
+                assertEquals("tony.foxbridge", user.key)
+                assertEquals("tony.foxbridge", user.name)
+                assertEquals("tfoxbridge@gmail.com", user.emailAddress)
+                assertEquals("Tony Foxbridge", user.displayName)
+                assertEquals(true, user.active)
                 assertEquals(
-                    """{"key":"tony.foxbridge","name":"tony.foxbridge","emailAddress":"tfoxbridge@gmail.com","avatarUrls":{"48x48":"https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg","24x24":"https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg","16x16":"https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg","32x32":"https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg"},"displayName":"Tony Foxbridge","active":true}""",
-                    response.content
+                    "https://images.vexels.com/media/users/3/145908/preview2/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg",
+                    user.avatarUrls["24x24"]
                 )
             }
         }
     }
+
     @Test
-    fun testGetSearchResultWith() {
+    fun testGetSearchResultWithTestJql() {
         withTestApplication({ module(testing = true) }) {
             handleRequest(HttpMethod.Get, "/rest/api/2/search?jql=test") {
                 addHeader(
@@ -46,54 +60,73 @@ class JiraStubTest {
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals(
-                    """{"startAt":0,"maxResults":50,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"1111 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"1112 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"1113 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
-                    response.content
-                )
+
+                val searchResult = gson.fromJson(response.content, SearchResult::class.java)
+                assertEquals(0, searchResult.startAt)
+                assertEquals(50, searchResult.maxResults)
+                assertEquals(3, searchResult.total)
+                assertEquals(3, searchResult.issues.size)
+                assertEquals("ABC-1111", searchResult.issues.first().key)
             }
+        }
+    }
+
+    @Test
+    fun testGetSearchResultWithDifferentStartAtAndMaxResults() {
+        withTestApplication({ module(testing = true) }) {
             handleRequest(HttpMethod.Get, "rest/api/2/search?jql=test&startAt=10&maxResults=40") {
                 addHeader(
                     HttpHeaders.Authorization,
                     HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
                 )
             }.apply {
-                assertEquals(
-                    """{"startAt":10,"maxResults":40,"total":3,"issues":[{"key":"ABC-1111","fields":{"summary":"1111 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-1234","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1112","fields":{"summary":"1112 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-2345","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}},{"key":"ABC-1113","fields":{"summary":"1113 Outcome","status":{"name":"Amazing"},"issuetype":{"name":"Chore"},"customfield_10006":"ABC-3456","assignee":{"displayName":"Tony Foxbridge"},"duedate":"2020-01-01"}}]}""",
-                    response.content
-                )
+                assertEquals(HttpStatusCode.OK, response.status())
+
+                val searchResult = gson.fromJson(response.content, SearchResult::class.java)
+                assertEquals(10, searchResult.startAt)
+                assertEquals(40, searchResult.maxResults)
             }
         }
     }
+
     @Test
     fun testGetIssue() {
         withTestApplication({ module(testing = true) }) {
-            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testkey") {
+            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testKey") {
                 addHeader(
                     HttpHeaders.Authorization,
                     HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals(
-                    """{"key":"testkey","fields":{"issuelinks":[{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"ABC-2111","fields":{"issuetype":{"name":"Epic"}}},"inwardissue":{"key":"ABC-2111","fields":{"issuetype":{"name":"Epic"}}}},{"type":{"name":"Gant End to End","inward":"depends on"},"outwardIssue":{"key":"ABC-2112","fields":{"issuetype":{"name":"Epic"}}},"inwardissue":{"key":"ABC-2112","fields":{"issuetype":{"name":"Epic"}}}}]}}""",
-                    response.content
-                )
+
+                val issue = gson.fromJson(response.content, Issue::class.java)
+                assertEquals("testKey", issue.key)
+                assertEquals("ABC-2111", issue.fields?.issuelinks?.first()?.inwardissue?.key)
+                assertEquals("ABC-2111", issue.fields?.issuelinks?.first()?.outwardIssue?.key)
             }
         }
     }
+
     @Test
     fun testGetIssueWithChangelog() {
         withTestApplication({ module(testing = true) }) {
-            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testkey?expand=test&maxResults=40&startAt=10") {
+            handleRequest(HttpMethod.Get, "/rest/api/2/issue/testKey?expand=changelog&maxResults=40&startAt=10") {
                 addHeader(HttpHeaders.Authorization,
                     HttpAuthHeader.Single("basic", Base64.getEncoder().encodeToString("$username:$password".toByteArray())).render()
                 )
             }.apply {
                 assertEquals(HttpStatusCode.OK, response.status())
-                assertEquals(
-                    """{"key":"testkey","changelog":{"startAt":10,"maxResults":40,"total":1,"histories":[{"created":"2019-12-25T20:00:00.000+0000","items":[{"field":"status","fromString":"Open","toString":"Closed"}]}]}}""",
-                    response.content
-                )
+
+                val issue = gson.fromJson(response.content, Issue::class.java)
+                assertEquals("testKey", issue.key)
+                assertEquals(10, issue.changelog?.startAt)
+                assertEquals(40, issue.changelog?.maxResults)
+                assertEquals(1, issue.changelog?.total)
+                assertEquals("2019-05-01T20:00:00.000+0000", issue.changelog?.histories?.first()?.created)
+                assertEquals("status", issue.changelog?.histories?.first()?.items?.first()?.field)
+                assertEquals("Next", issue.changelog?.histories?.first()?.items?.first()?.fromString)
+                assertEquals("In Progress", issue.changelog?.histories?.first()?.items?.first()?.toString)
             }
         }
     }
