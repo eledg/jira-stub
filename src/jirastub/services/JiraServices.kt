@@ -462,7 +462,8 @@ class JiraServices {
                             )
                         )
                     )
-                )
+                ),
+                created = "2019-05-01T20:00:00.000+0000"
             ),
             changelog = null
         )
@@ -472,43 +473,44 @@ class JiraServices {
                 key = key,
                 fields = IssueFields(
                     issuelinks = listOf(
-                            IssueLink(
-                                type = IssueLinkType(
-                                    name = "Gantt End to End",
-                                    inward = "depends on"
-                                ),
-                                outwardIssue = OutwardInwardIssue(
-                                    key = "ABC-2113",
-                                    fields = OutwardInwardIssueFields(
-                                        issuetype = IssueType(name = "Epic")
-                                    )
-                                ),
-                                inwardissue = OutwardInwardIssue(
-                                    key = "ABC-2113",
-                                    fields = OutwardInwardIssueFields(
-                                        issuetype = IssueType(name = "Epic")
-                                    )
+                        IssueLink(
+                            type = IssueLinkType(
+                                name = "Gantt End to End",
+                                inward = "depends on"
+                            ),
+                            outwardIssue = OutwardInwardIssue(
+                                key = "ABC-2113",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
                                 )
                             ),
-                            IssueLink(
-                                type = IssueLinkType(
-                                    name = "Gantt End to End",
-                                    inward = "depends on"
-                                ),
-                                outwardIssue = OutwardInwardIssue(
-                                    key = "ABC-2114",
-                                    fields = OutwardInwardIssueFields(
-                                        issuetype = IssueType(name = "Epic")
-                                    )
-                                ),
-                                inwardissue = OutwardInwardIssue(
-                                    key = "ABC-2114",
-                                    fields = OutwardInwardIssueFields(
-                                        issuetype = IssueType(name = "Epic")
-                                    )
+                            inwardissue = OutwardInwardIssue(
+                                key = "ABC-2113",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            )
+                        ),
+                        IssueLink(
+                            type = IssueLinkType(
+                                name = "Gantt End to End",
+                                inward = "depends on"
+                            ),
+                            outwardIssue = OutwardInwardIssue(
+                                key = "ABC-2114",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
+                                )
+                            ),
+                            inwardissue = OutwardInwardIssue(
+                                key = "ABC-2114",
+                                fields = OutwardInwardIssueFields(
+                                    issuetype = IssueType(name = "Epic")
                                 )
                             )
                         )
+                    ),
+                    created = "2019-05-01T20:00:00.000+0000"
                 ),
                 changelog = null
             )
@@ -553,7 +555,8 @@ class JiraServices {
                                 )
                             )
                         )
-                    )
+                    ),
+                    created = "2019-05-01T20:00:00.000+0000"
                 ),
                 changelog = null
             )
@@ -563,7 +566,29 @@ class JiraServices {
     fun getIssueWithChangelog(key: String, expand: String, maxResults: Int, startAt: Int): Issue {
         return Issue(
             key = key,
-            fields = null,
+            fields = IssueFields(
+                issuelinks = listOf(
+                    IssueLink(
+                        type = IssueLinkType(
+                            name = "Gantt End to End",
+                            inward = "depends on"
+                        ),
+                        outwardIssue = OutwardInwardIssue(
+                            key = "ABC-2111",
+                            fields = OutwardInwardIssueFields(
+                                issuetype = IssueType(name = "Epic")
+                            )
+                        ),
+                        inwardissue = OutwardInwardIssue(
+                            key = "ABC-2111",
+                            fields = OutwardInwardIssueFields(
+                                issuetype = IssueType(name = "Epic")
+                            )
+                        )
+                    )
+                ),
+                created = "2019-05-01T20:00:00.000+0000"
+            ),
             changelog = Changelog(
                 startAt = startAt,
                 maxResults = maxResults,
