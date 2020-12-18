@@ -467,7 +467,13 @@ class JiraServices {
                 summary = "Issue title",
                 status = Status(
                     name = "Amazing"
-                )
+                ),
+                issuetype = IssueType(name = "Story"),
+                customfield_10006 = "ABC-1234",
+                assignee = Assignee(
+                    displayName = "Tony Foxbridge"
+                ),
+                duedate = "2020-01-07"
             ),
             changelog = null
         )
@@ -518,7 +524,13 @@ class JiraServices {
                     summary = "Issue title",
                     status = Status(
                         name = "Amazing"
-                    )
+                    ),
+                    issuetype = IssueType(name = "Story"),
+                    customfield_10006 = "ABC-1234",
+                    assignee = Assignee(
+                        displayName = "Tony Foxbridge"
+                    ),
+                    duedate = "2020-01-07"
                 ),
                 changelog = null
             )
@@ -568,7 +580,13 @@ class JiraServices {
                     summary = "Issue title",
                     status = Status(
                         name = "Amazing"
-                    )
+                    ),
+                    issuetype = IssueType(name = "Story"),
+                    customfield_10006 = "ABC-1234",
+                    assignee = Assignee(
+                        displayName = "Tony Foxbridge"
+                    ),
+                    duedate = "2020-01-07"
                 ),
                 changelog = null
             )
@@ -603,7 +621,13 @@ class JiraServices {
                 summary = "Issue title",
                 status = Status(
                     name = "Amazing"
-                )
+                ),
+                issuetype = IssueType(name = "Story"),
+                customfield_10006 = "ABC-1234",
+                assignee = Assignee(
+                    displayName = "Tony Foxbridge"
+                ),
+                duedate = "2020-01-07"
             ),
             changelog = Changelog(
                 startAt = startAt,
