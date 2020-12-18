@@ -463,7 +463,9 @@ class JiraServices {
                         )
                     )
                 ),
-                created = "2019-05-01T20:00:00.000+0000"
+                created = "2019-05-01T20:00:00.000+0000",
+                summary = "Issue title",
+                status = "Amazing"
             ),
             changelog = null
         )
@@ -510,7 +512,9 @@ class JiraServices {
                             )
                         )
                     ),
-                    created = "2019-05-01T20:00:00.000+0000"
+                    created = "2019-05-01T20:00:00.000+0000",
+                    summary = "Issue title",
+                    status = "Amazing"
                 ),
                 changelog = null
             )
@@ -556,7 +560,9 @@ class JiraServices {
                             )
                         )
                     ),
-                    created = "2019-05-01T20:00:00.000+0000"
+                    created = "2019-05-01T20:00:00.000+0000",
+                    summary = "Issue title",
+                    status = "Amazing"
                 ),
                 changelog = null
             )
@@ -587,7 +593,9 @@ class JiraServices {
                         )
                     )
                 ),
-                created = "2019-05-01T20:00:00.000+0000"
+                created = "2019-05-01T20:00:00.000+0000",
+                summary = "Issue title",
+                status = "Amazing"
             ),
             changelog = Changelog(
                 startAt = startAt,
