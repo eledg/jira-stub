@@ -4,5 +4,5 @@ data class IssueFields(
     val issuelinks: List<IssueLink>,
     val created: String,
     val summary: String,
-    val status: String
+    val status: Status
 )

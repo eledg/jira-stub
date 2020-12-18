@@ -465,7 +465,9 @@ class JiraServices {
                 ),
                 created = "2019-05-01T20:00:00.000+0000",
                 summary = "Issue title",
-                status = "Amazing"
+                status = Status(
+                    name = "Amazing"
+                )
             ),
             changelog = null
         )
@@ -514,7 +516,9 @@ class JiraServices {
                     ),
                     created = "2019-05-01T20:00:00.000+0000",
                     summary = "Issue title",
-                    status = "Amazing"
+                    status = Status(
+                        name = "Amazing"
+                    )
                 ),
                 changelog = null
             )
@@ -562,7 +566,9 @@ class JiraServices {
                     ),
                     created = "2019-05-01T20:00:00.000+0000",
                     summary = "Issue title",
-                    status = "Amazing"
+                    status = Status(
+                        name = "Amazing"
+                    )
                 ),
                 changelog = null
             )
@@ -595,7 +601,9 @@ class JiraServices {
                 ),
                 created = "2019-05-01T20:00:00.000+0000",
                 summary = "Issue title",
-                status = "Amazing"
+                status = Status(
+                    name = "Amazing"
+                )
             ),
             changelog = Changelog(
                 startAt = startAt,
