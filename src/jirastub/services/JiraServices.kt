@@ -40,7 +40,8 @@ class JiraServices {
                         ),
                         customfield_10006 = "ABC-1234",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
-                        duedate = "2020-01-07"
+                        duedate = "2020-01-07",
+                        customfield_11912 = FeatureStateField(value = "On")
                     )
                 ),
                 Ticket(
@@ -55,7 +56,8 @@ class JiraServices {
                         ),
                         customfield_10006 = "ABC-2345",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
-                        duedate = "2020-01-05"
+                        duedate = "2020-01-05",
+                        customfield_11912 = FeatureStateField(value = "On")
                     )
                 ),
                 Ticket(
@@ -70,7 +72,8 @@ class JiraServices {
                         ),
                         customfield_10006 = "ABC-3456",
                         assignee = Assignee(displayName = "Tony Foxbridge"),
-                        duedate = "2020-01-03"
+                        duedate = "2020-01-03",
+                        customfield_11912 = FeatureStateField(value = "On")
                     )
                 )
             )
@@ -94,7 +97,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6100",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-07"
+                            duedate = "2020-01-07",
+                        customfield_11912 = FeatureStateField(value = "On")
                         )
                     ),
                     Ticket(
@@ -109,7 +113,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6101",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-06"
+                            duedate = "2020-01-06",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     )
                 )
@@ -132,7 +137,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6102",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-05"
+                            duedate = "2020-01-05",
+                            customfield_11912 = FeatureStateField(value = "Off")
                         )
                     ),
                     Ticket(
@@ -147,7 +153,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6103",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-04"
+                            duedate = "2020-01-04",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     )
                 )
@@ -170,7 +177,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6104",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-03"
+                            duedate = "2020-01-03",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     ),
                     Ticket(
@@ -185,7 +193,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-6105",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-02"
+                            duedate = "2020-01-02",
+                            customfield_11912 = FeatureStateField(value = "Off")
                         )
                     )
                 )
@@ -208,7 +217,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2111",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-07"
+                            duedate = "2020-01-07",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     ),
                     Ticket(
@@ -223,7 +233,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2111",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-06"
+                            duedate = "2020-01-06",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     )
                 )
@@ -246,7 +257,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2112",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-06"
+                            duedate = "2020-01-06",
+                            customfield_11912 = FeatureStateField(value = "Off")
                         )
                     ),
                     Ticket(
@@ -261,7 +273,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2112",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-05"
+                            duedate = "2020-01-05",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     )
                 )
@@ -284,7 +297,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2113",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-05"
+                            duedate = "2020-01-05",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     ),
                     Ticket(
@@ -299,7 +313,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2113",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-04"
+                            duedate = "2020-01-04",
+                            customfield_11912 = FeatureStateField(value = "Off")
                         )
                     )
                 )
@@ -322,7 +337,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2114",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-04"
+                            duedate = "2020-01-04",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     ),
                     Ticket(
@@ -337,7 +353,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2114",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-03"
+                            duedate = "2020-01-03",
+                            customfield_11912 = FeatureStateField(value = "Off")
                         )
                     )
                 )
@@ -360,7 +377,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2115",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-03"
+                            duedate = "2020-01-03",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     ),
                     Ticket(
@@ -375,7 +393,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2115",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-02"
+                            duedate = "2020-01-02",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     )
                 )
@@ -398,7 +417,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2116",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-02"
+                            duedate = "2020-01-02",
+                            customfield_11912 = FeatureStateField(value = "Off")
                         )
                     ),
                     Ticket(
@@ -413,7 +433,8 @@ class JiraServices {
                             ),
                             customfield_10006 = "ABC-2116",
                             assignee = Assignee(displayName = "Tony Foxbridge"),
-                            duedate = "2020-01-01"
+                            duedate = "2020-01-01",
+                            customfield_11912 = FeatureStateField(value = "On")
                         )
                     )
                 )

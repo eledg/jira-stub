@@ -6,5 +6,6 @@ data class TicketField(
     val issuetype: IssueType,
     val customfield_10006: String,
     val assignee: Assignee,
-    val duedate: String
+    val duedate: String,
+    val customfield_11912: FeatureStateField?
 )
