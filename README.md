@@ -20,7 +20,7 @@ The below is required to be installed for the Jira stub to run locally:
 
 1. Build app and install dependencies with `gradle clean build`, or setup your IDE to do this for you
 2. Run the `main/src/JiraStub.kt` class in your preferred IDE
-3. This will run the API locally on port `8081`
+3. This will run the API locally on port `8083`
 
 ## 1.3 Request and Response Examples
 
@@ -37,7 +37,7 @@ Parameters:
 
 ---
 
-Example: http://localhost:8081/rest/api/2/user?username=tony
+Example: http://localhost:8083/rest/api/2/user?username=tony
 
 Response body:
 
@@ -67,7 +67,7 @@ Parameters:
 
 ---
 
-Example: http://localhost:8081/rest/api/2/search?jql=key%20in%20(ABC-2111,%20ABC-2112)%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)
+Example: http://localhost:8083/rest/api/2/search?jql=key%20in%20(ABC-2111,%20ABC-2112)%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)
 
 JQL: `key in (ABC-2111, ABC-2112) AND status NOT IN (Closed, Withdrawn)`
 
@@ -116,7 +116,7 @@ Response body:
     }
 ---
 
-Example: http://localhost:8081/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)
+Example: http://localhost:8083/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)
 
 JQL: `"Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)`
 
@@ -165,7 +165,7 @@ Response body:
     }
 ---
 
-Example: http://localhost:8081/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)&maxResults=40&startAt=10
+Example: http://localhost:8083/rest/api/2/search?jql=%22Epic%20Link%22%20=%20ABC-2111%20AND%20status%20NOT%20IN%20(Closed,%20Withdrawn)&maxResults=40&startAt=10
 
 JQL: "Epic Link" = ABC-2111 AND status NOT IN (Closed, Withdrawn)
 
@@ -224,7 +224,7 @@ Parameters:
     
 ---
 
-Example: http://localhost:8081/rest/api/2/issue/ABC-1111
+Example: http://localhost:8083/rest/api/2/issue/ABC-1111
  
 Response body:
  
@@ -281,7 +281,7 @@ Response body:
     }
 ---
 
-Example: http://localhost:8081/rest/api/2/issue/ABC-2233?expand=changelog&maxResults=40&startAt=10
+Example: http://localhost:8083/rest/api/2/issue/ABC-2233?expand=changelog&maxResults=40&startAt=10
 
 Response body:
 
