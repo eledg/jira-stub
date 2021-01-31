@@ -656,7 +656,7 @@ class JiraServices {
                 total = 1,
                 histories = listOf(
                     Histories(
-                        created = "2019-05-01T20:00:00.000+0000",
+                        created = "2019-05-01T21:00:00.000+0000",
                         items = listOf(
                             Items(
                                 field = "status",
