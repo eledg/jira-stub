@@ -64,9 +64,11 @@ class JiraStubTest {
                 val searchResult = gson.fromJson(response.content, SearchResult::class.java)
                 assertEquals(0, searchResult.startAt)
                 assertEquals(50, searchResult.maxResults)
-                assertEquals(3, searchResult.total)
-                assertEquals(3, searchResult.issues.size)
+                assertEquals(4, searchResult.total)
+                assertEquals(4, searchResult.issues.size)
                 assertEquals("ABC-1111", searchResult.issues.first().key)
+                assertEquals("Required", searchResult.issues.first().fields.customfield_18301?.value)
+                assertEquals("No", searchResult.issues.first().fields.customfield_16800?.value)
             }
         }
     }
@@ -123,7 +125,8 @@ class JiraStubTest {
                 assertEquals(10, issue.changelog?.startAt)
                 assertEquals(40, issue.changelog?.maxResults)
                 assertEquals(1, issue.changelog?.total)
-                assertEquals("2019-05-01T20:00:00.000+0000", issue.changelog?.histories?.first()?.created)
+                assertEquals("2019-05-01T20:00:00.000+0000", issue.fields?.created)
+                assertEquals("2019-05-01T21:00:00.000+0000", issue.changelog?.histories?.first()?.created)
                 assertEquals("status", issue.changelog?.histories?.first()?.items?.first()?.field)
                 assertEquals("Next", issue.changelog?.histories?.first()?.items?.first()?.fromString)
                 assertEquals("In Progress", issue.changelog?.histories?.first()?.items?.first()?.toString)
